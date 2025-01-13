@@ -196,11 +196,8 @@ namespace BackdoorBandit
 
         public static void Enable()
         {
-            if (Singleton<IBotGame>.Instantiated)
-            {
-                GameWorld gameWorld = Singleton<GameWorld>.Instance;
-                gameWorld.GetOrAddComponent<DoorBreachComponent>();
-            }
+            var gameWorld = Singleton<GameWorld>.Instance;
+            gameWorld.GetOrAddComponent<DoorBreachComponent>(); 
         }
         private void LoadHashSetFromJson(ref HashSet<string> hashSet, string jsonFileName)
         {
